@@ -1,0 +1,51 @@
+package com.zhiyou100.servlet.role;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zhiyou100.entity.RoleDo;
+import com.zhiyou100.service.RoleService;
+import com.zhiyou100.service.impl.RoleServiceImpl;
+
+import sun.launcher.resources.launcher;
+
+/**
+ * Servlet implementation class UpdateServlet
+ */
+public class UpdateServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private RoleService service = new RoleServiceImpl();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String ids = request.getParameter("id");
+		long id = Long.parseLong(ids);
+		// System.out.println("已经跳转到updateServlet中来了"+id);
+//获取参数
+		
+		//获取通过id查询的Role信息
+		RoleDo roleById = service.getRoleById(id);
+		//存起来
+		request.setAttribute("role",roleById);
+		//携带信息请求转发到update.jsp页面
+		request.getRequestDispatcher("/WEB-INF/jsp/role/update.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//System.out.println("已经跳转到updateServlet中的POST来了");
+		
+		//1,获取参数,并更新
+		String idS = request.getParameter("id");
+		System.out.println("id是"+idS);
+		long id =Long.parseLong(idS);
+		String name = request.getParameter("roleName");
+		String description = request.getParameter("roleDesc");
+		service.updateRole(id, name, description);
+		//2,重定向
+		response.sendRedirect(request.getContextPath()+"/role/list");
+	}
+
+}

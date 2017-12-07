@@ -1,0 +1,43 @@
+package com.zhiyou100.service.impl;
+
+import java.util.List;
+
+import com.zhiyou100.dao.DepartmentDao;
+import com.zhiyou100.dao.impl.DepartmentDaoImpl;
+import com.zhiyou100.entity.DepartmentDo;
+import com.zhiyou100.service.DepartmentService;
+
+public class DepartmentServiceImpl implements DepartmentService {
+private DepartmentDao dao =new DepartmentDaoImpl();
+	@Override
+	public List<DepartmentDo> listDeportment() {
+		
+		return dao.listDeportment();
+		
+	}
+
+	@Override
+	public DepartmentDo getDepartmentById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addDepartment(String name, String description) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateDepartment(long id, String name, String department) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void removeDepartment(long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.zhiyou100.dao.impl;
+
+import org.junit.Test;
+
+public class RoleDaoImplTest {
+RoleDaoImpl dao = new RoleDaoImpl();
+	@Test
+	public void testListRole() {
+		dao.addRole((long) 1, "高级讲师", "讲课");
+	}
+
+	@Test
+	public void testAddRole() {
+	}
+
+	@Test
+	public void testUpdateRole() {
+	}
+
+	@Test
+	public void testRemoveRole() {
+	}
+
+}

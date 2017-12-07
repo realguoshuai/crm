@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>角色管理 - 智游客户关系管理系统</title>
+<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="box">
+		<h3>角色管理</h3>
+		<div class="actions">
+            <form id="searchForm" action="#" method="post">
+            <span>搜索内容：</span>
+            <input type="text" name="keyword" value="123" placeholder="请输入搜索关键词">
+            &nbsp;&nbsp;&nbsp;
+            <span>搜索字段：</span>
+            <select name="searchField">
+                <option value="">用户名</option>
+                <option value="">手机号</option>
+                <option value="">地址</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn btn-default" value="搜索">
+        </form>
+			<div>
+				<a class="btn btn-primary" href="add.html">添加角色</a>
+			</div>
+		</div>
+		<table class="list">
+            <tr>
+                <th>序号</th>
+                <th>角色名称</th>
+                <th>角色描述</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                </td>
+                <td>
+                    <a class="fa fa-pencil" title="编辑" href="#"></a>
+                	&nbsp;&nbsp;
+                	<a class="fa fa-remove" title="删除" href="javascript:confirmDelete(aaa)"></a>
+                </td>
+            </tr>
+        </table>
+
+        <div class="pager-info">
+            <div>共有 10 条记录，第 1/10 页 </div>
+            <div>
+                <ul class="pagination">
+                    <li class="paginate_button previous disabled" onclick="goPage(1)">
+                        <a href="#">上一页</a>
+                    </li>
+                    <li class="paginate_button active " 
+                        onclick="goPage(1)">
+                        <a href="#">1</a>
+                    </li>
+                    <li class="paginate_button" 
+                    onclick="goPage(2)">
+                    <a href="#">2</a>
+                    </li>	
+                    <li class="paginate_button next}">
+                        <a href="#">下一页</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+	</div>
+	<script src="lib/jquery/jquery.js"></script>
+	<script>
+    	function confirmDelete(id){
+    		if (confirm("确定要删除" + id + "吗？")) {
+    			location.href = '' + id
+    		}
+    	}
+    </script>
+</body>
+</html>

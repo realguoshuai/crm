@@ -1,0 +1,46 @@
+package com.zhiyou100.dao;
+
+import java.util.List;
+
+import com.zhiyou100.entity.RoleDo;
+
+/** 
+ * @ClassName: RoleDao 
+ * @Description: 对Role表的操作接口
+ * @author: guoshuai
+ * @date: 2017年12月4日 下午4:10:18  
+ */
+public interface RoleDao {
+  /** 
+ * @Title: listRole 
+ * @Description: 展示角色
+ * @return
+ * @return: List<RoleDo>
+ */
+List<RoleDo>listRole();
+  /** 
+ * @Title: addRole 
+ * @Description:增加角色
+ * @param name
+ * @param id
+ * @param decsription
+ * @return: void
+ */
+void addRole(Long id,String name,String decsription);
+  /** 
+ * @Title: updateRole 
+ * @Description: 更新角色
+ * @param name
+ * @param description
+ * @return: void
+ */
+void updateRole(String name,String description);
+
+/** 
+ * @Title: removeRole 
+ * @Description: 删除角色
+ * @param id
+ * @return: void
+ */
+void removeRole(long id);
+}

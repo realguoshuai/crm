@@ -1,0 +1,115 @@
+package com.zhiyou100.entity;
+
+import java.util.Date;
+
+/**
+ * @ClassName: RoleDo Role表对应的Do,和role表一一对应 基本类型尽量使用对应的引用类型
+ * @author: guoshuai
+ * @date: 2017年12月4日 下午3:54:40
+ */
+public class RoleDo {
+	/**
+	 * @fieldName: id
+	 * @fieldType: long
+	 * @Description:角色id
+	 */
+	private long id;
+	/**
+	 * @fieldName: name
+	 * @fieldType: String
+	 * @Description: 角色名称
+	 */
+	private String name;
+	/**
+	 * @fieldName: description
+	 * @fieldType: String
+	 * @Description:角色描述
+	 */
+	private String description;
+
+	/**
+	 * @fieldName: delete
+	 * @fieldType: Integer
+	 * @Description: 是否被删除
+	 */
+	private Integer delete;
+	/**
+	 * @fieldName: gmtCreate
+	 * @fieldType: Date
+	 * @Description:创建时间
+	 */
+	private Date gmtCreate;
+	/**
+	 * @fieldName: gmtUpdatep
+	 * @fieldType: Date
+	 * @Description: 修改时间
+	 */
+	private Date gmtModified;
+
+	public RoleDo(long id, String name, String description, Date gmtModified) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.gmtModified = gmtModified;
+	}
+
+	public RoleDo() {
+		super();
+	}
+
+	@Override
+	public String toString() {
+		return "RoleDo [id=" + id + ", name=" + name + ", description=" + description + ", delete=" + delete
+				+ ", gmtCreate=" + gmtCreate + ", gmtModified=" + gmtModified + "]";
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getDelete() {
+		return delete;
+	}
+
+	public void setDelete(Integer delete) {
+		this.delete = delete;
+	}
+
+	public Date getGmtCreate() {
+		return gmtCreate;
+	}
+
+	public void setGmtCreate(Date gmtCreate) {
+		this.gmtCreate = gmtCreate;
+	}
+
+	public Date getGmtModified() {
+		return gmtModified;
+	}
+
+	public void setGmtUpdatep(Date gmtModified) {
+		this.gmtModified = gmtModified;
+	}
+
+}
