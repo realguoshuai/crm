@@ -151,4 +151,44 @@
     <servlet-name>UserSelectServlet</servlet-name>
     <url-pattern>/user/select</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NoticeAddServlet</display-name>
+    <servlet-name>NoticeAddServlet</servlet-name>
+    <servlet-class>com.zhiyou100.servlet.notice.AddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeAddServlet</servlet-name>
+    <url-pattern>/notice/add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NoticeListServlet</display-name>
+    <servlet-name>NoticeListServlet</servlet-name>
+    <servlet-class>com.zhiyou100.servlet.notice.ListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeListServlet</servlet-name>
+    <url-pattern>/notice/list</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NoticeUpdateServlet</display-name>
+    <servlet-name>NoticeUpdateServlet</servlet-name>
+    <servlet-class>com.zhiyou100.servlet.notice.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeUpdateServlet</servlet-name>
+    <url-pattern>/notice/update</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NoticeDeleteServlet</display-name>
+    <servlet-name>NoticeDeleteServlet</servlet-name>
+    <servlet-class>com.zhiyou100.servlet.notice.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NoticeDeleteServlet</servlet-name>
+    <url-pattern>/notice/delete</url-pattern>
+  </servlet-mapping>
 </web-app>

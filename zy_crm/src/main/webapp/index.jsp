@@ -132,7 +132,7 @@
 	        <li class="sub-menu">
 		        <ul class="menu">
 		        	<li>
-		        		<a target="pageBox" href="#">
+		        		<a target="pageBox" href='<c:url value="/notice/list"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;公告管理
 		            	</a>
 		        	</li>

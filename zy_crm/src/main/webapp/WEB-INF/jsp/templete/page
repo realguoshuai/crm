@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+		<div class="pager-info">
+			<div>共有 ${pageCount } 页记录，第 ${pageIndex }/${pageCount } 页</div>
+			<div>
+				<ul class="pagination">
+					<li class="paginate_button previous">
+						<c:choose>
+							<c:when test="${keyword != null and type != null }">
+								<a
+									href='<c:url value="/notice/list?pageIndex=${pageIndex == 1 ? pageIndex : pageIndex - 1 }&keyword=${keyword }&type=${type }"></c:url>'>上一页</a>
+							</c:when>
+							<c:otherwise>
+								<a
+									href='<c:url value="/notice/list?pageIndex=${pageIndex == 1 ? pageIndex : pageIndex - 1 }"></c:url>'>上一页</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
+
+					<c:forEach begin="1" end="${pageCount }" varStatus="i">
+						<li
+							class="paginate_button <c:if test="${pageIndex == i.count }">active</c:if>">
+
+							<c:choose>
+								<c:when test="${keyword != null and type != null }">
+									<a
+										href='<c:url value="/notice/list?pageIndex=${i.count }&keyword=${keyword }&type=${type }"></c:url>'>${i.count }</a>
+								</c:when>
+								<c:otherwise>
+									<a
+										href='<c:url value="/notice/list?pageIndex=${i.count }"></c:url>'>${i.count }</a>
+								</c:otherwise>
+							</c:choose>
+						</li>
+					</c:forEach>
+					<li class="paginate_button next">
+						<c:choose>
+							<c:when test="${keyword != null and type != null }">
+								<a
+									href='<c:url value="/notice/list?pageIndex=${pageIndex == pageCount ? pageIndex : pageIndex + 1 }&keyword=${keyword }&type=${type }"></c:url>'>下一页</a>
+							</c:when>
+							<c:otherwise>
+								<a
+									href='<c:url value="/notice/list?pageIndex=${pageIndex == pageCount ? pageIndex : pageIndex + 1 }"></c:url>'>下一页</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
+				</ul>
+			</div>
+		</div>

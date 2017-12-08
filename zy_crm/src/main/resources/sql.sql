@@ -55,8 +55,18 @@ CREATE TABLE `user` (
   `gmt_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `gmt_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 );
-INSERT INTO user (name,phone,email,department_id,role_id) values('张三','15617587262','adad@163.com',1,1);
+-- INSERT INTO user (name,phone,email,department_id,role_id) values('张三','15617587262','adad@163.com',1,1);
 
-
-
-
+DROP TABLE IF EXISTS `notice`;
+CREATE TABLE IF NOT EXISTS `notice`(
+	`id` bigint unsigned PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+	`title` varchar(50) NOT NULL COMMENT '标题',
+	`content` text NOT NULL COMMENT '内容',
+	`begin_time` date NULL COMMENT '开始时间',
+	`end_time` date NULL COMMENT '结束时间',
+	`user_id` bigint unsigned NOT NULL COMMENT '创建人 id',
+	`department_id` bigint unsigned COMMENT '部门 id',
+	`is_delete` tinyint unsigned DEFAULT 0 COMMENT '逻辑删除：1 删除，0  未删除',
+	`gmt_create` timestamp DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`gmt_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+);
