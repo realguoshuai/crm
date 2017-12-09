@@ -70,3 +70,52 @@ CREATE TABLE IF NOT EXISTS `notice`(
 	`gmt_create` timestamp DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
 	`gmt_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
 );
+
+
+-- 邮件表
+DROP TABLE IF EXISTS `email`;
+CREATE TABLE IF NOT EXISTS `email`(
+	`id` bigint unsigned PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+	`title` varchar(50) NOT NULL COMMENT '标题',
+	`content` text NOT NULL COMMENT '内容',
+	`send_user_id` bigint unsigned  NOT NULL COMMENT '发件人 id',
+	`receive_user_id` bigint unsigned NOT NULL COMMENT '收件人 id',
+	`send_time` timestamp NULL COMMENT '发送时间',
+	`send_location` tinyint unsigned DEFAULT 0 COMMENT '邮件在发送方的状态：1 草稿箱，2  发件箱，3 垃圾箱，4 彻底删除',
+	`receive_location` tinyint unsigned DEFAULT 0 COMMENT '邮件在接收方的状态：0 未收到，1  收件箱，2 垃圾箱 3 彻底删除',
+	`is_delete` tinyint unsigned DEFAULT 0 COMMENT '逻辑删除：1 删除，0  未删除',
+	`gmt_create` timestamp DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+	`gmt_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+);
+
+-- 客户表
+DROP TABLE IF EXISTS `client_status`;
+CREATE TABLE `client_status` (
+  `id` bigint unsigned PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+  `status_name` varchar(20) NOT NULL COMMENT '状态名称',
+  `status_desc` varchar(20) not null comment '状态描述',
+  `is_delete` tinyint unsigned DEFAULT 0 COMMENT '逻辑删除:1 删除,0 未删除',
+  `gmt_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `gmt_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+);
+
+DROP TABLE IF EXISTS `client_classify`;
+CREATE TABLE `client_classify` (
+  `id` bigint unsigned PRIMARY KEY AUTO_INCREMENT COMMENT '主键,客户id',
+  `classify_name` varchar(20) NOT NULL COMMENT '分类名称',
+  `classify_desc` varchar(20) not null comment '分类描述',
+  `is_delete` tinyint unsigned DEFAULT 0 COMMENT '逻辑删除:1 删除,0 未删除',
+  `gmt_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `gmt_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+);
+
+DROP TABLE IF EXISTS `client_from`;
+CREATE TABLE `client_from` (
+  `id` bigint unsigned PRIMARY KEY AUTO_INCREMENT COMMENT '主键,客户id',
+  `from_name` varchar(20) NOT NULL COMMENT '来源名称',
+  `from_desc` varchar(20) not null comment '来源描述',
+  `is_delete` tinyint unsigned DEFAULT 0 COMMENT '逻辑删除:1 删除,0 未删除',
+  `gmt_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `gmt_modified` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间'
+);
+

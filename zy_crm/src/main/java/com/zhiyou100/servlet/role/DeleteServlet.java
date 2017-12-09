@@ -27,7 +27,7 @@ public class DeleteServlet extends HttpServlet {
 		long id =Long.parseLong(ids);
 		System.out.println("进DELETE来了"+id);
 		service.deleteRole(id);
-		response.sendRedirect(request.getContextPath()+"/role/list");
+		response.sendRedirect(request.getContextPath() + "/client/classify/list");
 	}
 
 }

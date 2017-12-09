@@ -39,20 +39,20 @@
                 <th>发送时间</th>
                 <th>操作</th>
             </tr>
-            <c:forEach var="message" items="${ list }">
+            <c:forEach var="message" items="${ listReceiveBox }">
             <tr>
-                <td>${ message.messageId }</td>
-                <td>${ message.receiverName }</td>
+                <td>${ message.id }</td>
+                <td>${ message.sendUserName }</td>
                 <td>
-	                <a title="查看详情" href="<c:url value="/message/detail?id=" />${message.messageId}" >
-	                	${ message.subject }
+	                <a title="查看详情" href="<c:url value="/message/detail?id=" />${message.id}" >
+	                	${ message.title }
 	                </a>
                 </td>
                 <td>
                 	<fmt:formatDate value="${message.sendTime}" type="both" pattern="yyyy-MM-dd HH:mm"/>
                 </td>
                 <td>
-                	<a class="fa fa-remove" title="删除" href="javascript:confirmDelete(${message.messageId})"></a>
+                	<a class="fa fa-remove" title="删除" href="javascript:confirmDelete(${message.id})"></a>
                 </td>
             </tr>
             </c:forEach>
@@ -64,7 +64,7 @@
     		</tr>
     		</c:if>
         </table>
-        <%@ include file="/WEB-INF/shared/pageInfo.jsp"  %>
+         <%@ include file="/WEB-INF/jsp/templete/page" %>
 	</div>
 	<script src="<c:url value="/lib/jquery/jquery.js" />"></script>
 	<script>

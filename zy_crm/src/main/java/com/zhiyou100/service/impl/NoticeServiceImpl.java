@@ -13,25 +13,25 @@ private NoticeDao dao =new NoticeDaoImpl();
 	@Override
 	public List<NoticeDo> listNotice(long pageIndex) {
 		
-		return dao.listNotice(pageIndex) ;
+		return dao.listNotice((pageIndex-1)*5) ;
 	}
 
 	@Override
 	public long countNotice() {
 		
-		return dao.countNotice();
+		return (dao.countNotice()+4)/5;
 	}
 
 	@Override
 	public List<NoticeDo> listNotice(String Keyword, NoticeSearchTypeName type, long pageIndex) {
 		
-		return dao.listNotice(Keyword, type, pageIndex);
+		return dao.listNotice(Keyword, type, (pageIndex - 1) * 5);
 	}
 
 	@Override
 	public long countNotice(String keyword, NoticeSearchTypeName type) {
 		
-		return dao.countNotice(keyword, type);
+		return (dao.countNotice(keyword, type) + 4) / 5;
 	}
 
 	@Override

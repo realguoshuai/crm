@@ -64,7 +64,7 @@
     		</tr>
     		</c:if>
         </table>
-        <%@ include file="/WEB-INF/shared/pageInfo.jsp"  %>
+     <%@ include file="/WEB-INF/jsp/templete/page" %>
 	</div>
 	<script src="<c:url value="/lib/jquery/jquery.js" />"></script>
 	<script>

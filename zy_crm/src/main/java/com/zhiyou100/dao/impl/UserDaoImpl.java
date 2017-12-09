@@ -227,5 +227,31 @@ public class UserDaoImpl implements UserDao {
 		
 		return count;		
 	}
+	@Override
+	public UserDo getUser(String name) {
+		UserDo userDo =null;
+		try(Connection connection = DBUtil.INSTANCE.getConnection();) {
+			String sql = "SELECT name,password FROM user where name=?";
+			try(PreparedStatement prepareStatement = connection.prepareStatement(sql);){
+				prepareStatement.setString(1, name);
+				try(ResultSet rs = prepareStatement.executeQuery();){
+					while(rs.next()){
+						
+						String name1 = rs.getString("name");
+						
+						String password = rs.getString("password");
+						userDo =new UserDo(name, password);
+						
+					}
+				}
+				
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userDo;
+	}
 
 }

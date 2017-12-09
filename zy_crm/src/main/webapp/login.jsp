@@ -23,14 +23,14 @@
         <p>智游客户关系管理系统</p>
         <form action="<c:url value="/user/login" />" method="post">
             <div>
-                <input type="text" id="username" name="username" value="${param.username}" placeholder="请输入用户名">
+                <input type="text" id="username" name="username" value="${param.name}" placeholder="请输入用户名">
             </div>
             <div>
                 <input type="password" id="password" name="password" value="${param.password}" placeholder="请输入密码">
             </div>
             <div>
             	<%--<p class="error-message">${param.errorMessage}</p>--%>
-            	<p class="error-message">${requestScope.errorMessage}</p>
+            	<%-- <p class="error-message">${requestScope.errorMessage}</p> --%>
                 <input type="submit" value="登录">
             </div>
         </form>

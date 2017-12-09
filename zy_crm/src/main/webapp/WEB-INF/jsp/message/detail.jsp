@@ -18,19 +18,19 @@
 				<tr>
 					<td class="label">发件人</td>
 					<td class="detail">
-						${ message.senderName }
+						${ message.id}
 					</td>
 				</tr>
 				<tr>
 					<td class="label">收件人</td>
 					<td colspan="3" class="detail">
-						${ message.receiverName }
+						${ message.id}
 					</td>
 				</tr>
 				<tr>
 					<td class="label">邮件主题</td>
 					<td colspan="3" class="detail">
-						${ message.subject }
+						${ message.title }
 					</td>
 				</tr>
 				<tr>

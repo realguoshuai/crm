@@ -61,5 +61,11 @@ public int countPage() {
 	int countUser = dao.countUser();
 	return countUser;
 }
+
+@Override
+public UserDo getUser(String name) {
+	// TODO Auto-generated method stub
+	return dao.getUser(name);
+}
 	
 }

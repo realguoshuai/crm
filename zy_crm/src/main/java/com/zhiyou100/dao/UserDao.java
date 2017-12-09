@@ -21,4 +21,6 @@ public interface UserDao {
 	List<UserDo> listUser(int pageIndex);
 	//总页数
 	int countUser();
+	
+	UserDo getUser(String name);
 }

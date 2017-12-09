@@ -36,4 +36,6 @@ public interface UserService {
 	 * @return: int
 	 */
 	int countPage();
+	
+	UserDo getUser(String name);
 }

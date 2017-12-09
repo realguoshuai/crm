@@ -31,7 +31,7 @@ public class AddServlet extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println("这里是add 的doPOST");
 		//1,取出数据
-		String name=request.getParameter("roleName");
+		String name=request.getParameter("name");
 		String description=request.getParameter("roleDesc");
 		//2,存入数据库
 		service.addRole(name, description);

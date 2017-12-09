@@ -23,6 +23,12 @@ public class UserDo {
 				+ "]";
 	}
 	
+	public UserDo(String name, String password) {
+		super();
+		this.name = name;
+		this.password = password;
+	}
+
 	public UserDo(Long id, String name, String password, String gender, String phone, String eMail, int departmentId,
 			int roleId, String description) {
 		super();

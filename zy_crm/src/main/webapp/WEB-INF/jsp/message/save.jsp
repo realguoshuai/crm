@@ -11,14 +11,14 @@
 <body>
 	<div class="box">
 		<h3>写邮件</h3>
-		<form action="<c:url value="/message/save" />" method="post">
+		<form action="<c:url value="/message/save"/>" method="post">
 			<table class="form-table">
 				<tr>
 					<td>收件人</td>
 					<td colspan="3" class="control">
 						<select name="receiver">
 						<c:forEach var="user" items="${ users }">
-							<option value="${ user.userId }">${ user.username }</option>
+							<option value="${ user.id }">${ user.name }</option>
 						</c:forEach>
 						</select>
 					</td>

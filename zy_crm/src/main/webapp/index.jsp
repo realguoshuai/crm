@@ -13,16 +13,17 @@
 	<div class="header">
 	    <h1><a href="">智游客户关系管理系统</a></h1>
 	    <div class="nav">
-	    	<a target="right" href="#">工作台</a>
+	    	<a target="right" href="http://localhost:8080/zycrm/index.jsp?name=${name }">工作台</a>
             <a target="right" href="#">报表</a>
             <a target="right" href="#">客户信息</a>
             <a target="right" href="#">员工信息</a>
             <a target="right" href="#">公告信息</a>
             <a target="right" href="#">发件箱</a>
 	    </div>
+	    <%String name=request.getParameter("name"); %>
 	    <div class="user">
-	        <a href="#"></a>
-	        <a href="" >退出</a>
+	        <a href="#"><%=name %></a>
+	        <a href="http://localhost:8080/zycrm/login.jsp" >退出</a>
 	    </div>
     </div>
     <div class="main">
@@ -50,17 +51,17 @@
 		            	</a>
 		            </li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/client/classify/list"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;客户分类
 		            	</a>
 		            </li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/client/status/list"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;客户状态
 		            	</a>
 		            </li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/client/from/list"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;客户来源
 		            	</a>
 		            </li>
@@ -74,46 +75,47 @@
 	        <li class="sub-menu">
 		        <ul>
 		        	<li>
-		        		<a target="pageBox" href="#">
+		        		<a target="pageBox" href='<c:url value="/list/notice"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;通知公告
 		            	</a>
 		        	</li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/list/user"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;员工信息
 		            	</a>
 		            </li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/list/department"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;部门信息
 		            	</a>
 		            </li>
 		        </ul>
 	        </li>
-	        <li class="menu-title">
-	        	<a href="#">
-	    			<i class=" fa fa-envelope"></i>&nbsp;&nbsp;站内邮件
-	    		</a>
-	        </li>
+	      <li class="menu-title">
+				<a href= "#">
+					<i class=" fa fa-envelope"></i>
+					&nbsp;&nbsp;站内邮件
+				</a>
+			</li>
 	        <li class="sub-menu">
 		        <ul>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/message/save"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;写邮件
 		            	</a>
 		           	</li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/message/receive"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;收件箱
 		            	</a>
 		           	</li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/message/send"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;发件箱
 		            	</a>
 		            </li>
 		            <li>
-		            	<a target="pageBox" href="#">
+		            	<a target="pageBox" href='<c:url value="/message/draft"></c:url>'>
 		            		<i class=" fa fa-circle-thin"></i>&nbsp;&nbsp;草稿箱
 		            	</a>
 		            </li>

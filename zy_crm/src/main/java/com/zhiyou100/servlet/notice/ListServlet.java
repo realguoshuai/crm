@@ -66,24 +66,30 @@ public class ListServlet extends HttpServlet {
 
 				pageIndex = pageCount;
 			}
-			List<NoticeDo> list =service.listNotice(keyword, typeEnum, pageIndex);
-			request.setAttribute("list", list);
+			if (pageCount!=0) {
+				List<NoticeDo> list =service.listNotice(keyword, typeEnum, pageIndex);
+				request.setAttribute("list", list);
+				
+				request.setAttribute("pageIndex", pageIndex);
+				request.setAttribute("pageCount", pageCount);
+			}
 			
-			request.setAttribute("pageIndex", pageIndex);
-			request.setAttribute("pageCount", pageCount);
 			
 			request.setAttribute("keyword", keyword);
 			request.setAttribute("type", type);
 		}else{
 			//如果没有关键字,表示没有查询
-			long pageCount = service.countNotice();
+			Long pageCount = service.countNotice();
 			if (pageIndex > pageCount) {
 				pageIndex = pageCount;
 			}
-			List<NoticeDo> list = service.listNotice(pageIndex);
-			request.setAttribute("list", list);
-			request.setAttribute("pageIndex", pageIndex);
-			request.setAttribute("pageCount", pageCount);
+			if(pageCount != 0){
+				List<NoticeDo> list = service.listNotice(pageIndex);
+				request.setAttribute("list", list);
+				request.setAttribute("pageIndex", pageIndex);
+				request.setAttribute("pageCount", pageCount);
+			}
+			
 		}
 		request.getRequestDispatcher("/WEB-INF/jsp/notice/list.jsp").forward(request, response);
 

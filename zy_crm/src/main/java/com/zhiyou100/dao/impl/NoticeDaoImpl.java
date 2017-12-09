@@ -1,6 +1,7 @@
 package com.zhiyou100.dao.impl;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -79,10 +80,10 @@ public class NoticeDaoImpl implements NoticeDao {
 				sql = "SELECT n.id, u.name, n.title, d.name, n.content, n.begin_time, n.end_time FROM notice as n, user as u, department as d WHERE n.is_delete = 0 AND n.content like ? AND n.user_id = u.id AND n.department_id = d.id LIMIT ?, 5;";
 				break;
 			case USER_NAME:
-				sql = "SELECT n.id, u.name, n.title, d.name, n.content, n.begin_time, n.end_time FROM notice as n, user as u, department as d WHERE n.is_delete = 0 AND n.content like ? AND n.user_id = u.id AND n.department_id = d.id LIMIT ?, 5;";
+				sql = "SELECT n.id, u.name, n.title, d.name, n.content, n.begin_time, n.end_time FROM notice as n, user as u, department as d WHERE n.is_delete = 0 AND u.name like ? AND n.user_id = u.id AND n.department_id = d.id  LIMIT ?, 5;";
 				break;
 			case DEPARTMENT_NAME:
-				sql = "SELECT n.id, u.name, n.title, d.name, n.content, n.begin_time, n.end_time FROM notice as n, user as u, department as d WHERE n.is_delete = 0 AND n.content like ? AND n.user_id = u.id AND n.department_id = d.id LIMIT ?, 5;";
+				sql = "SELECT n.id, u.name, n.title, d.name, n.content, n.begin_time, n.end_time FROM notice as n, user as u, department as d WHERE n.is_delete = 0 AND d.name like ? AND n.user_id = u.id AND n.department_id = d.id LIMIT ?, 5;";
 				break;
 
 			default:
