@@ -25,7 +25,6 @@
     <version>1.2</version>
 </dependency>
 
-
   </dependencies>
   <build>	
   <!-- 最终打包后的名字 项目名数据库名一致 -->
