@@ -5,6 +5,7 @@ import java.util.List;
 import com.zhiyou100.entity.ClientClassifyDo;
 import com.zhiyou100.servlet.department.UpdateServlet;
 
+
 public interface ClientClassifyDao {
 	List<ClientClassifyDo> listClientClassify();
 	

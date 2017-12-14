@@ -14,4 +14,5 @@ public interface ClientStatusDao {
 	void deleteClientStatus(long id);
 	
 	ClientStatusDo getlistByid(long id);
+
 }
