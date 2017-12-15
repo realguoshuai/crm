@@ -15,5 +15,6 @@ public interface ClientClassifyDao {
 
 	void updateClientClassfify(String classifyName,String classifyDesc,long id);
 
+
 	void deleteClientClassify(long id);
 }
