@@ -1,11 +1,10 @@
-package com.zhiyou100.dao.impl;
+﻿package com.zhiyou100.dao.impl;
 
 import java.util.List;
 
 import org.junit.Test;
 
 import com.zhiyou100.entity.RoleDo;
-
 public class RoleDaoImplTest {
 RoleDaoImpl dao = new RoleDaoImpl();
 	@Test
