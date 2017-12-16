@@ -1,7 +1,8 @@
--- 两个短横线表示注释 
+﻿-- 两个短横线表示注释 
 -- 这里是对数据库创建语句的备份
 
--- 创建数据库 先删除后创建,便于我们多次执行
+-- 创建数据库 先删除后创建,便于我们多次执行 
+
 DROP DATABASE IF EXISTS `zy_crm`;
 CREATE DATABASE IF NOT EXISTS `zy_crm`;
 
