@@ -6,7 +6,6 @@
 DROP DATABASE IF EXISTS `zy_crm`;
 CREATE DATABASE IF NOT EXISTS `zy_crm`;
 
-
 -- 使用数据库
 USE `zy_crm`;
 -- 创建表
